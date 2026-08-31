@@ -1,0 +1,21 @@
+# include <iostream>
+ using namespace std;
+   int main () {
+           int x,y,z;
+           cout<<"Enter your x : ";
+           cin>>x;
+           cout<<"Enter your y : ";
+           cin>>y;
+           cout<<"Enter your z : ";
+           cin>>z;
+        if(x>y && x>y){
+            cout<<" x is greater among all three number"<<"\n";
+                    }
+        if(y>x && y>z){
+            cout<<" y is greater among all three numbers"<<endl;
+             }
+        if(z>x && z>y){
+            cout<<" z is greater among all three numbers"<<endl;
+             }
+   return 0;
+}
