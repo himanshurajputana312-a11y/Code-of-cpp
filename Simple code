@@ -1,0 +1,55 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main () {
+    // here we are checking the age criteria for voting//
+    int age=21;
+    bool citizen =true;
+    if(age>=18){
+        cout<<"Eligible for voting"<<endl;
+    
+    if(citizen){
+        cout<<"yes you are citizen of india"<<endl;
+    }
+    else{
+        cout<<"NOt citizen"<<endl;
+    }
+}
+    else{
+        cout<<"not old enough "<<endl;
+    }
+    // print number from 1 to 5 //
+       for(int i=1;i<=5;i++) {
+        cout<<i<<endl;
+       }
+       //checking break and contiune in while loop //
+  int i = 1;
+  while (i < 10) {
+    if (i == 4) {
+     i++;
+      continue;
+    }
+    cout << i << "\n";
+    i++;
+  } 
+  int j=0;
+  while(j<10) {
+    if(j==4) {
+        break;
+    }
+    cout<<j<<endl;
+    j++;
+  }
+  //interchanging the values//
+  int a=5,b=12,c;
+  cout<<"before swapping values"<<"\n";
+     cout<<"a = "<<a<<endl;
+     cout<<"b = "<<b<<endl;
+cout<<"after swapping"<<"\n";
+         c=a;
+         a=b;
+         b=c;
+    cout<<"a = "<<a<<endl;
+    cout<<"b = "<<b<<endl;
+ return 0;
+}
