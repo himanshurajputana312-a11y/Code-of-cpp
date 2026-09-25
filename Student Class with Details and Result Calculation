@@ -1,0 +1,62 @@
+#include<iostream>
+#include<string>
+using namespace std;
+    class student{
+        private:
+        string student;
+        int rollno;
+        int marks[3];
+        int totalmarks;
+        string result;
+        float percentage;
+
+        public:
+        void myfunction(){
+            cout<<"Enter Student name: ";
+            getline(cin,student);
+            cout<<"Student Name = "<<student<<endl;
+            cout<<"Roll no. : ";
+            cin>>rollno;
+            cout<<"Student Roll number = "<<rollno<<endl;
+            cout<<"Enter Students obtained marks in 3 subjects";
+            for(int i=0;i<=2;i++){
+                cin>>marks[i];
+            }
+         }
+        void mycalculation(){
+               totalmarks=(marks[0]+marks[1]+marks[2]);
+              float percentage;
+              percentage=(totalmarks*100)/300;
+              if(percentage>60){
+                cout<<"First Class"<<endl;
+                 result="First Class";
+              }
+              else if(percentage<=60 && percentage>50){
+                cout<<"Second Class"<<endl;
+                result="Second Class";
+              }
+            else if(percentage>40 && percentage<=50){
+                cout<<"Third Class"<<endl;
+                result="Third Class";
+            }
+            else if(percentage<=40 && percentage>0){
+                cout<<"Failed"<<endl;
+            }
+        }
+        void details(){
+            cout<<"     Students Details     "<<endl;
+            cout<<"Student Name : "<<student<<endl;
+            cout<<"Roll no. : "<<rollno<<endl;
+            cout<<"Marks in each subject are "<<marks[0]<<" "<<marks[1]<<" "<<marks[2]<<endl;
+            cout<<"Total Marks Obtained : "<<totalmarks<<endl;
+            cout<<"Result : "<<result<<endl;
+        }
+    };
+           int main(){
+            student mystud;
+            mystud.myfunction();
+            mystud.mycalculation();
+            mystud.details();
+              
+               return 0;
+}
