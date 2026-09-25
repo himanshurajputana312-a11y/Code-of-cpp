@@ -1,0 +1,49 @@
+#include<iostream>
+#include<string>
+using namespace std;
+    class rectangle{
+         private:
+          int lenght;
+          int breadth;
+          int areas;
+          int perimeters;
+          public:
+          void myfunction();
+          void area();
+          void perimeter();
+          void output();
+         
+    };
+    void rectangle::myfunction(){
+          cout<<"Lenght : ";
+          cin>>lenght;
+          cout<<"Breadth :";
+          cin>>breadth;
+    };
+void rectangle::area(){
+       int areas=lenght*breadth;
+       cout<<"Area : "<<areas<<endl;
+};
+void rectangle::perimeter(){
+    int perimeters=2*(lenght+breadth);
+    cout<<"Perimeter : "<<perimeters<<endl;
+};
+   void rectangle::output(){
+    cout<<"     AREAS & PERIMETER by use of classes and function "<<endl;
+    cout<<"Lenght : "<<lenght<<endl;
+    cout<<"Breadth : "<<breadth<<endl;
+    cout<<"Area : ";
+    area();
+    cout<<"Perimeter : ";
+        perimeter();
+   }
+        int main(){
+      
+           rectangle myobj;
+           myobj.myfunction();
+           myobj.area();
+           myobj.perimeter();
+           myobj.output();
+             return 0;
+        }
+
