@@ -1,0 +1,51 @@
+#include<iostream>
+#include<string>
+using namespace std;
+  class employee{
+   private:
+      int employeeid;
+      string employeename;
+      int salary;
+      int bonus;
+      int totalsalary;
+      int total;
+
+   public:
+      employee(){
+         cout<<"Default vaules"<<endl;
+         employeeid=0;
+         employeename="Unknown";
+         salary=0;
+         bonus=0;
+      }
+      employee(int id,string name,int s,int b){
+         cout<<"Employe salary list"<<endl;
+         employeeid=id;
+         employeename=name;
+         salary=s;
+         bonus=b;
+       
+   }
+    void myfunc(){
+       totalsalary=(salary+bonus);
+//never forget to put cout here if you not write cout then output may be getting some bug error//
+       cout<<totalsalary<<endl;
+   }
+   void display(){
+      cout<<"Employee ID : "<<employeeid<<endl;
+      cout<<"Employee Name : "<<employeename<<endl;
+      cout<<"Salary = "<<salary<<endl;
+      cout<<"Bonus = "<<bonus<<endl;
+      cout<<"Total Salary = ";
+      myfunc();
+
+   }
+
+  };
+       int main(){
+         employee myemp1;
+         myemp1.display();
+         employee myemp2(11,"Hero",5000000,30000);
+         myemp2.display();
+         return 0;
+       }
