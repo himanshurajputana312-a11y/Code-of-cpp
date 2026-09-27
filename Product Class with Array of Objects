@@ -2,7 +2,8 @@
 #include<string>
 using namespace std;
    class product{
-    private:
+       private:
+       int pno;
        int m[12];
        int productid;
        string productname;
@@ -10,10 +11,11 @@ using namespace std;
        int quantitysales;
        int bill;
        int totalsales;
-      
 
-    public:
-       void myfunction(){
+       public:
+      void myfunction(){
+        cout<<"Product No. :";
+        cin>>pno;
         cout<<"Enter Product ID : ";
         cin>>productid;
         cout<<" Enter Product Name : ";
@@ -21,19 +23,21 @@ using namespace std;
         cout<<"Enter Price per unit : ";
         cin>>price; 
         cout<<"Enter Total quantity sales = ";
+         totalsales=0;
         for(int i=0;i<12;i++){
             cin>>m[i];
-           totalsales=(m[0]+m[1]+m[2]+m[3]+m[4]+m[5]+m[6]+m[7]+m[8]+m[9]+m[10]+m[11]);
-         }
+      
+         totalsales= (totalsales +m[i]);
+        }
+        
          cout<<"total quantity sales "<<totalsales<<endl;
         }
         void bills(){
            bill=(totalsales*price);
-            cout<<bill;
+            cout<<bill<<endl;
+
          }
          void display(){
-
-
             cout<<"      Product Details       "<<endl;
             cout<<"Product ID = "<<productid<<endl;
             cout<<"Product Name = "<<productname<<endl;
@@ -41,27 +45,20 @@ using namespace std;
             cout<<" Total quantity solds = "<<totalsales<<endl;
             cout<<"Total Bills of 12 months of this product : ";
             bills();
-         
-         }
-          
-       };
+            cout<<endl;
+           }
+        };
          int main(){
-            product myproduct;
-            for(int n=1;n<=3;n++){
-            myproduct.myfunction();
-         }
-            myproduct.bills();
-            for(int k=1;k<=3;k++){
-               myproduct.display();
-            }
-              return 0;
-         }
+        product myproduct[3]; 
     
-       
-           
-   
+    for(int n=0; n<3; n++){
+        myproduct[n].myfunction();
+    };
+    for(int k=0; k<3; k++){
+        myproduct[k].display();
+    };
+        return 0;
+      }
 
+         
     
-       
-           
-   
