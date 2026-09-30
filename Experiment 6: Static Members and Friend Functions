@@ -1,0 +1,90 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class staticexample{
+   private:
+   static int count;
+   int id;
+
+  public:
+   staticexample(){
+   count++;
+// Evaluates first, then increments//
+      id=count;
+  }
+   void showcount(){
+      cout<<"Total Objects Created = "<<count<<endl;
+    }
+    void display(){
+      cout<<"Object ID = "<<id<<endl;
+    }
+};
+int staticexample::count{
+  count=0
+};
+class classA;
+class classB;
+
+class classA{
+  private:
+  int valueA;
+  public:
+  classA(int a): valueA(a){}
+  friend void comparevalues(classA & a,classB & b);
+};
+
+class classB{
+  private:
+  int valueB;
+ public:
+ classB(int a):valueB(a){}
+ friend void comparevalues(classA &a,classB &b);
+};
+
+void comparevalues(classA &a,classB &b){
+  cout<<"Values of  classA : "<<a.valueA<<endl;
+  cout<<"value in classB : "<<b.valueB<<endl;
+  if(a.valueA>b.valueB){
+    cout<<"ClassA value is greater than classB value"<<endl;
+  }
+  else if(a.valueA<b.valueB){
+    cout<<"ClassB value is greater than classA value"<<endl;
+  }
+  else{
+    cout<<"Both Values are equal"<<endl;
+  }
+}
+
+class secretdata{
+  private:
+  string password;
+  int secretnum;
+  public:
+  secretdata(string pass,int num):password(pass),secretnum(num){}
+  friend class friendclassexample;
+};
+
+class friendclassexample{
+  public:
+  void display(secretdata &s){
+    cout<<"Password : "<<s.password<<endl;
+    cout<<"Secret number = "<<s.secretnum<<endl;
+  }
+};
+
+int main(){
+  cout<<" ---- static members ---- "<<endl;
+  staticexample s1,s2,s3;
+  s1.showcount();
+  cout<<" ---- static members ---- "<<endl;
+  classA a(60);
+  classB b(40);
+  comparevalues(a,b);
+  cout<<" --- Friend class ---- "<<endl;
+  secretdata data("Password",756);
+  friendclassexample myobj;
+  myobj.display(data);
+
+  return 0;
+}
